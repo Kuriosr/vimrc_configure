@@ -25,7 +25,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
-Plugin 'bling/vim-airline'
+Plugin 'Kuriosr/vim-airline'
 "
 " " All of your Plugins must be added before the following line
 call vundle#end('$VIM/vimfiles/bundle/')            " required
@@ -57,6 +57,8 @@ nmap <leader>6 <Plug>AirlineSelectTab6
 nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
+
+nmap <leader>q <Plug>AirlineDeleteCurTab
 
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
