@@ -45,6 +45,10 @@ filetype plugin indent on    " required
 " " Put your non-Plugin stuff after this line
 "
 let mapleader = ","
+
+"Configure for YouCompleteMe
+nnoremap <leader>g :YcmCompleter GoTo<CR>
+
 "Configure for airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
@@ -63,6 +67,7 @@ nmap <leader>q <Plug>AirlineDeleteCurTab
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 
+set hlsearch
 set nocompatible              " be iMproved, required
 sy on
 set nu
