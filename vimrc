@@ -79,6 +79,8 @@ set showmatch
 if has('mouse')
 	set mouse=a
 endif
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
 
 "括号、引号自动补全
 inoremap ( ()<Esc>i
