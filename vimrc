@@ -3,7 +3,7 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 "set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=$VIM/.vim/Vundle.vim
+set rtp+=$VIM/.vim/bundle/Vundle.vim
 call vundle#begin('/usr/local/share/vim/.vim/')
 " " alternatively, pass a path where Vundle should install plugins
 " "call vundle#begin('~/some/path/here')
@@ -26,6 +26,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Kuriosr/vim-airline'
+Plugin 'mileszs/ack.vim'
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,6 +49,14 @@ let mapleader = ","
 
 "Configure for YouCompleteMe
 nnoremap <leader>g :YcmCompleter GoTo<CR>
+
+"Configure for Ack Plugin
+nnoremap <leader>fg :Ack -i
+nnoremap <leader>fw :call Search_World()<CR>
+function! Search_World()
+	let w = expand("<cword>")
+	execute "Ack -i " . w
+endfunction	
 
 "Configure for airline
 let g:airline#extensions#tabline#enabled = 1
