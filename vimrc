@@ -21,6 +21,7 @@ Plugin 'L9'
 "
 Plugin 'tomasr/molokai'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/taglist.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'ervandew/supertab'
@@ -55,7 +56,7 @@ nnoremap <leader>fg :Ack -i
 nnoremap <leader>fw :call Search_World()<CR>
 function! Search_World()
 	let w = expand("<cword>")
-	execute "Ack -i " . w
+	execute "Ack -w --ignore-file=is:tags " . w 
 endfunction	
 
 "Configure for airline
@@ -75,6 +76,9 @@ nmap <leader>q <Plug>AirlineDeleteCurTab
 
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
+"let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 2 
+let g:ctrlp_cmd = 'CtrlPMRUFiles'
 
 set hlsearch
 set nocompatible              " be iMproved, required
@@ -85,8 +89,12 @@ set shiftwidth=4
 set tabstop=4
 set cursorline
 set smartindent
+set fileencodings=utf-8,gbk,GB2312
 set guifont=Consolas:h12
 colorscheme molokai
+"if use vim under ssh, Use this two configure
+let g:molokai_original = 1
+let g:rehash256 = 1
 set t_Co=256
 set laststatus=2
 set showmatch
@@ -137,4 +145,6 @@ endf
 
 "NERDTree Open
 nmap <F2> :NERDTreeToggle<CR>
-
+"Taglist Config
+let Tlist_Use_Right_Window = 1
+nnoremap <F3> :TlistToggle<CR>
