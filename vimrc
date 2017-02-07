@@ -1,6 +1,5 @@
 set nocompatible
 filetype off         " required
-filetype plugin on
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -33,7 +32,7 @@ Plugin 'mileszs/ack.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " " To ignore plugin indent changes, instead use:
-" "filetype plugin on
+filetype plugin on
 " "
 " " Brief help
 " " :PluginList       - lists configured plugins
