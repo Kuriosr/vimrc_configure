@@ -94,6 +94,7 @@ set expandtab
 
 set cursorline
 set smartindent
+set encoding=utf-8
 set fileencodings=utf-8,gbk,GB2312
 set guifont=Consolas:h12
 colorscheme molokai
